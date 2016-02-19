@@ -1,0 +1,51 @@
+<ion-view title="Welcome">
+	<ion-content>
+		<label class="item item-input">
+			<span class="input-label">Name </span>
+			<input type="text" ng-model="username" placeholder="username@mail.com">
+		</label>
+		<label class="item item-input">
+			<span class="input-label">Password </span>
+			<input type="password" ng-model="userpassword" placeholder="Enter password">
+		</label>
+
+		<span class="user_type_radios" ng-hide="login">
+			<label>
+				<input type="radio" ng-model="user.type" value="agent" >Agent
+			</label>
+			<label>
+				<input type="radio" ng-model="user.type" value="homeowner">Homeowner
+			</label>
+		</span>
+
+		<div class="agent_signup" ng-hide="login || !login && user.type == 'homeowner'">
+			<label class="item item-input">
+				<span class="input-label">First name </span>
+				<input type="text" ng-model="firstname" placeholder="Chuck">
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Last name </span>
+				<input type="text" ng-model="lastname" placeholder="Norris">
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Brokerage </span>
+				<input type="text" ng-model="brokerage" placeholder="Century69">
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Agent Id </span>
+				<input type="number" ng-model="agentid" placeholder="9816474199">
+			</label>
+		</div>
+
+		<span>
+			<a class="authHelper" ng-click="toggleAuth()" ng-hide="!login">Don't have an account yet?</a>
+			<a class="authHelper" ng-click="toggleAuth()" ng-hide="login">Do have an account?</a>
+		</span>
+
+		<button class="button button-full button-positive auth_btn" ng-hide="!login">Log In</button>
+		<button class="button button-full button-energized auth_btn" ng-hide="login">Sign up</button>
+	</ion-content>
+</ion-view>
