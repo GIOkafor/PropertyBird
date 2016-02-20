@@ -2,11 +2,11 @@
 	<ion-content>
 		<label class="item item-input">
 			<span class="input-label">Name </span>
-			<input type="text" ng-model="username" placeholder="username@mail.com">
+			<input type="text" ng-model="user.username" placeholder="username@mail.com">
 		</label>
 		<label class="item item-input">
 			<span class="input-label">Password </span>
-			<input type="password" ng-model="userpassword" placeholder="Enter password">
+			<input type="password" ng-model="user.password" placeholder="Enter password">
 		</label>
 
 		<span class="user_type_radios" ng-hide="login">
@@ -45,7 +45,7 @@
 			<a class="authHelper" ng-click="toggleAuth()" ng-hide="login">Do have an account?</a>
 		</span>
 
-		<button class="button button-full button-positive auth_btn" ng-hide="!login">Log In</button>
+		<button class="button button-full button-positive auth_btn" ng-hide="!login" ng-click="login(user)">Log In</button>
 		<button class="button button-full button-energized auth_btn" ng-hide="login">Sign up</button>
 	</ion-content>
 </ion-view>
